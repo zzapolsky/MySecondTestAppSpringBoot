@@ -22,6 +22,7 @@ public class Request {
     @Size(max =32, message = "Поле uid не должно превышать 32 символа")
     private String uid;
 
+
     @NotBlank(message = "Поле не может быть пустым")
     @Size(max =32, message = "Поле operationUid не должно превышать 32 символа")
     private String operationUid;
@@ -39,4 +40,19 @@ public class Request {
     private int productCode;
     private int smsCode;
 
+    @Override
+    public String toString() {
+        return "Request{" +
+                "uid='" + uid + '\'' +
+                ", operationUid='" + operationUid + '\'' +
+                ", systemName='" + systemName + '\'' +
+                ", systemTime='" + systemTime + '\'' +
+                ", source='" + source + '\'' +
+                ", communicationId=" + communicationId +
+                ", templateId=" + templateId +
+                ", productCode=" + productCode +
+                ", smsCode=" + smsCode +
+                '}';
+    }
 }
+
