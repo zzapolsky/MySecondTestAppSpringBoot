@@ -1,13 +1,13 @@
-package com.example.MyThirdTestAppSpringBoot;
+package com.example.MySecondTestAppSpringBoot;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 @SpringBootApplication
-public class MyThirdAppSpringBootApplication {
+public class MySecondAppSpringBootApplication {
 
 	public static void main(String[] args) {
-		SpringApplication.run(MyThirdAppSpringBootApplication.class, args);
+		SpringApplication.run(MySecondAppSpringBootApplication.class, args);
 	}
 
 }

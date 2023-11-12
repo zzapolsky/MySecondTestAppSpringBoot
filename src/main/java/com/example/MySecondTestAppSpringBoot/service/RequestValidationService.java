@@ -1,6 +1,6 @@
-package com.example.MyThirdTestAppSpringBoot.service;
+package com.example.MySecondTestAppSpringBoot.service;
 
-import com.example.MyThirdTestAppSpringBoot.exception.ValidationFailedException;
+import com.example.MySecondTestAppSpringBoot.exception.ValidationFailedException;
 import org.springframework.stereotype.Service;
 import org.springframework.validation.BindingResult;
 @Service

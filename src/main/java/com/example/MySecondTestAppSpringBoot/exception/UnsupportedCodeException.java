@@ -1,4 +1,4 @@
-package com.example.MyThirdTestAppSpringBoot.exception;
+package com.example.MySecondTestAppSpringBoot.exception;
 
 public class UnsupportedCodeException extends Exception {
     public UnsupportedCodeException() {

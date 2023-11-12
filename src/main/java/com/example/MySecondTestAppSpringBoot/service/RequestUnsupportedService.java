@@ -1,9 +1,9 @@
-package com.example.MyThirdTestAppSpringBoot.service;
+package com.example.MySecondTestAppSpringBoot.service;
 
-import com.example.MyThirdTestAppSpringBoot.exception.UnsupportedCodeException;
+import com.example.MySecondTestAppSpringBoot.exception.UnsupportedCodeException;
 import org.springframework.stereotype.Service;
 
-import com.example.MyThirdTestAppSpringBoot.model.Request;
+import com.example.MySecondTestAppSpringBoot.model.Request;
 @Service
 public class RequestUnsupportedService implements UnsupportedService {
 

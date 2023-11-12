@@ -1,8 +1,8 @@
-package com.example.MyThirdTestAppSpringBoot.service;
+package com.example.MySecondTestAppSpringBoot.service;
 
 
-import com.example.MyThirdTestAppSpringBoot.model.Response;
-import com.example.MyThirdTestAppSpringBoot.util.DateTimeUtil;
+import com.example.MySecondTestAppSpringBoot.model.Response;
+import com.example.MySecondTestAppSpringBoot.util.DateTimeUtil;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Service;
 

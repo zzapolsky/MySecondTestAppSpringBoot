@@ -1,4 +1,4 @@
-package com.example.MyThirdTestAppSpringBoot.model;
+package com.example.MySecondTestAppSpringBoot.model;
 
 public enum Systems {
     ERP("Enterprise Resource Planning"),

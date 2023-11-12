@@ -1,14 +1,14 @@
-package com.example.MyThirdTestAppSpringBoot.controller;
+package com.example.MySecondTestAppSpringBoot.controller;
 
 
-import com.example.MyThirdTestAppSpringBoot.exception.UnsupportedCodeException;
-import com.example.MyThirdTestAppSpringBoot.exception.ValidationFailedException;
-import com.example.MyThirdTestAppSpringBoot.model.*;
-import com.example.MyThirdTestAppSpringBoot.service.DeltaTime;
-import com.example.MyThirdTestAppSpringBoot.service.ModifyResponseService;
-import com.example.MyThirdTestAppSpringBoot.service.UnsupportedService;
-import com.example.MyThirdTestAppSpringBoot.service.ValidationService;
-import com.example.MyThirdTestAppSpringBoot.util.DateTimeUtil;
+import com.example.MySecondTestAppSpringBoot.exception.UnsupportedCodeException;
+import com.example.MySecondTestAppSpringBoot.exception.ValidationFailedException;
+import com.example.MySecondTestAppSpringBoot.model.*;
+import com.example.MySecondTestAppSpringBoot.service.ModifyRequestService;
+import com.example.MySecondTestAppSpringBoot.service.ModifyResponseService;
+import com.example.MySecondTestAppSpringBoot.service.UnsupportedService;
+import com.example.MySecondTestAppSpringBoot.service.ValidationService;
+import com.example.MySecondTestAppSpringBoot.util.DateTimeUtil;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
@@ -20,6 +20,7 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
 
 import javax.validation.Valid;
+import java.text.SimpleDateFormat;
 import java.util.Date;
 @Slf4j
 @RestController
@@ -28,15 +29,20 @@ public class MyController {
     private final ValidationService validationService;
     private final UnsupportedService unsupportedService;
     private final ModifyResponseService modifyResponseService;
+    private final ModifyRequestService modifyRequestService;
 
 
     @Autowired
     public MyController(ValidationService validationService, UnsupportedService unsupportedService,
-                        @Qualifier("ModifySystemTimeResponseService") ModifyResponseService modifyResponseService) {
+                        @Qualifier("ModifySystemTimeResponseService") ModifyResponseService modifyResponseService,
+                        @Qualifier("ModifySystemNameRequestService") ModifyRequestService modifyRequestService,
+    @Qualifier("ModifySourceRequestService")) {
 
         this.validationService = validationService;
-         this.unsupportedService = unsupportedService;
+        this.unsupportedService = unsupportedService;
         this.modifyResponseService = modifyResponseService;
+        this.modifyRequestService = modifyRequestService;
+
     }
 
     @PostMapping( value = "/feedback")
@@ -46,8 +52,6 @@ public class MyController {
 
         log.info("request {}", request);
 
-
-
         Response response = Response.builder()
                 .uid(request.getUid())
                 .operationUid(request.getOperationUid())
@@ -56,8 +60,7 @@ public class MyController {
                 .errorCode(ErrorCodes.EMPTY)
                 .errorMessage(ErrorMessages.EMPTY)
                 .build();
-        log.info("request {}", request);
-        DeltaTime.delta(request,response);
+
             try {
                 validationService.isValid(bindingResult);
                 unsupportedService.unsupported(request);
@@ -86,6 +89,7 @@ public class MyController {
                 return new ResponseEntity<>(response, HttpStatus.INTERNAL_SERVER_ERROR);
             }
             modifyResponseService.modify(response);
+            modifyRequestService.modify(request);
         log.info("request {}", request);
         return new ResponseEntity<>(modifyResponseService.modify(response), HttpStatus.OK);
 
