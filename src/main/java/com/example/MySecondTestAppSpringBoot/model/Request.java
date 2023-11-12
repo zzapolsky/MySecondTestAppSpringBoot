@@ -18,26 +18,66 @@ import javax.validation.constraints.Size;
 
 public class Request {
 
+    /*
+    Уникальный идентификатор сообщения
+     */
+
     @NotBlank(message = "Поле не может быть пустым")
     @Size(max =32, message = "Поле uid не должно превышать 32 символа")
     private String uid;
 
-
+    /*
+    Уникальный идентификатор операции
+    */
     @NotBlank(message = "Поле не может быть пустым")
     @Size(max =32, message = "Поле operationUid не должно превышать 32 символа")
     private String operationUid;
-
+    /*
+    Имя системы отправителя
+    */
     private String systemName;
+    /*
+    Время создания сообщения
+    */
     @NotBlank(message = "Поле не может быть пустым")
     private String systemTime;
-
+    /*
+    Имя источника
+    */
     private String source;
+    /*
+    Коэффициент должности
+    */
+    private Positions position;
+    /*
+    Оплата труда
+    */
+    private double salary;
+    /*
+    Коэффициент оплаты труда
+    */
+    private double bonus;
+    /*
+    Количество рабочих дней
+    */
+    private Integer workDays;
+    /*
+    Комуникационный идентификатор
+    */
     @Min(value =1, message = "Поле communicationUid не может быть меньше 1")
     @Max(value =100000, message = "Поле communicationUid не может быть больше 100000")
     private int communicationId;
-
+    /*
+    Идентификатор шаблона
+    */
     private int templateId;
+    /*
+    Код продукта
+    */
     private int productCode;
+    /*
+    SMS код
+    */
     private int smsCode;
 
     @Override
