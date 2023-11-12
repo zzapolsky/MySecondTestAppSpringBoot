@@ -4,10 +4,10 @@ import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 @SpringBootApplication
-public class MySecondAppSpringBootApplication {
+public class MyThirdAppSpringBootApplication {
 
 	public static void main(String[] args) {
-		SpringApplication.run(MySecondAppSpringBootApplication.class, args);
+		SpringApplication.run(MyThirdAppSpringBootApplication.class, args);
 	}
 
 }

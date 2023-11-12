@@ -4,6 +4,7 @@ package com.example.MySecondTestAppSpringBoot.controller;
 import com.example.MySecondTestAppSpringBoot.exception.UnsupportedCodeException;
 import com.example.MySecondTestAppSpringBoot.exception.ValidationFailedException;
 import com.example.MySecondTestAppSpringBoot.model.*;
+import com.example.MySecondTestAppSpringBoot.service.DeltaTime;
 import com.example.MySecondTestAppSpringBoot.service.ModifyResponseService;
 import com.example.MySecondTestAppSpringBoot.service.UnsupportedService;
 import com.example.MySecondTestAppSpringBoot.service.ValidationService;
@@ -46,6 +47,8 @@ public class MyController {
 
         log.info("request {}", request);
 
+
+
         Response response = Response.builder()
                 .uid(request.getUid())
                 .operationUid(request.getOperationUid())
@@ -54,7 +57,8 @@ public class MyController {
                 .errorCode(ErrorCodes.EMPTY)
                 .errorMessage(ErrorMessages.EMPTY)
                 .build();
-
+        log.info("request {}", request);
+        DeltaTime.delta(request,response);
             try {
                 validationService.isValid(bindingResult);
                 unsupportedService.unsupported(request);
