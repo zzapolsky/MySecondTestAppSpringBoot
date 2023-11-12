@@ -1,4 +1,4 @@
-package com.example.MySecondTestAppSpringBoot.model;
+package com.example.MyThirdTestAppSpringBoot.model;
 
 
 import lombok.AllArgsConstructor;

@@ -1,7 +1,7 @@
-package com.example.MySecondTestAppSpringBoot.service;
+package com.example.MyThirdTestAppSpringBoot.service;
 
 
-import com.example.MySecondTestAppSpringBoot.model.Response;
+import com.example.MyThirdTestAppSpringBoot.model.Response;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Service;
 

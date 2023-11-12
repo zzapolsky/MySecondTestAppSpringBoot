@@ -1,7 +1,7 @@
-package com.example.MySecondTestAppSpringBoot.service;
+package com.example.MyThirdTestAppSpringBoot.service;
 
-import com.example.MySecondTestAppSpringBoot.model.Request;
-import com.example.MySecondTestAppSpringBoot.model.Response;
+import com.example.MyThirdTestAppSpringBoot.model.Request;
+import com.example.MyThirdTestAppSpringBoot.model.Response;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Service;
 
