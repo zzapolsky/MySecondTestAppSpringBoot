@@ -35,8 +35,7 @@ public class MyController {
     @Autowired
     public MyController(ValidationService validationService, UnsupportedService unsupportedService,
                         @Qualifier("ModifySystemTimeResponseService") ModifyResponseService modifyResponseService,
-                        @Qualifier("ModifySystemNameRequestService") ModifyRequestService modifyRequestService,
-    @Qualifier("ModifySourceRequestService")) {
+                        @Qualifier("ModifySourceRequestService")  ModifyRequestService modifyRequestService) {
 
         this.validationService = validationService;
         this.unsupportedService = unsupportedService;
