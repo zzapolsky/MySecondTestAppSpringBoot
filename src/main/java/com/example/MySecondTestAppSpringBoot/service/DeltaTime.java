@@ -19,9 +19,9 @@ public class DeltaTime {
             Date dateRequest = simpleDateFormat.parse(strDateRequest);
             Date dateResponse = simpleDateFormat.parse(strDateResponse);
 
-            long delta = dateResponse.getTime() - dateRequest.getTime();
+            long difference = dateResponse.getTime() - dateRequest.getTime();
 
-            log.info("Разница во времени составляет {}", delta);
+            log.info("Разница во времени составляет {}", difference);
         } catch (Exception e) {
             log.error("Ошибка в расчете разницы времени", e);
         }
